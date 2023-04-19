@@ -1,0 +1,1 @@
+sass index.sass ../static/index.css

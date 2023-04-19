@@ -1,0 +1,144 @@
+@charset "UTF-8"
+
+@import "functions"
+
+////////////////////////////////////////////////////
+// Table of contents
+// PS: Search for this word for easier navigation
+// Example: || *Your table of content term*
+//
+// || Initial Variables
+// || Derived Variables
+////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////
+// || Initial Variables
+////////////////////////////////////////////////////
+
+// Your code starts here
+// Colors
+$black:   hsl(0, 0%, 4%)
+$black-2: hsl(0, 0%, 8%)
+$black-3: hsl(0, 0%, 12%)
+
+$gray-100: hsl(0, 0%, 15%)
+$gray-200: hsl(0, 0%, 20%)
+$gray-300: hsl(0, 0%, 30%)
+$gray-400: hsl(0, 0%, 40%)
+$gray-500: hsl(0, 0%, 50%)
+$gray-600: hsl(0, 0%, 60%)
+$gray-700: hsl(0, 0%, 70%)
+$gray-800: hsl(0, 0%, 80%)
+$gray-900: hsl(0, 0%, 90%)
+
+$white-3: hsl(0, 0%, 94%)
+$white-2: hsl(0, 0%, 97%)
+$white:   hsl(0, 0%, 100%)
+
+$red:    hsl(352, 87%, 61%)
+$pink:   hsl(319, 97%, 64%)
+$green:  hsl(133, 55%, 51%)
+$blue:   hsl(217, 77%, 49%)
+$yellow: hsl(44, 96%, 51%)
+$orange: hsl(32, 74%, 48%)
+$cyan:   hsl(180, 59%, 48%)
+$purple: hsl(275, 43%, 49%) 
+$teal:   hsl(181, 89%, 30%)
+$indigo: hsl(275, 100%, 25%)
+
+// Typography
+$family-sans-serif: -apple-system, BlinkMacSystemFont, Avenir, "Avenir Next", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif !default
+$family-monospace: monaco, Consolas, 'Lucida Console', monospace !default
+
+$font-scale: 1.25 !default
+
+$size-1: 1rem * $font-scale * $font-scale * $font-scale * $font-scale !default
+$size-2: 1rem * $font-scale * $font-scale * $font-scale !default
+$size-3: 1rem * $font-scale * $font-scale !default
+$size-4: 1rem * $font-scale !default
+$size-5: 1rem !default
+
+$weight-normal:   400 !default
+$weight-medium:   500 !default
+$weight-semibold: 600 !default
+$weight-bold:     700 !default
+
+// Border radius
+$radius-small: 2px !default
+$radius-normal: 4px !default
+$radius-large: 8px !default
+$radius-rounded: 50% !default
+
+// Block spacing
+$block-spacing: 1.5rem !default
+
+// Responsiveness
+$gap: 32px !default
+
+// 769 + 4rem
+$tablet: 769px + (2 * $gap) !default
+
+// 960px + 4rem
+$desktop: 960px + (2 * $gap) !default
+
+// 1152px + 4rem
+$widescreen-enabled: true !default
+$widescreen: 1152px + (2 * $gap) !default
+// 1344px + 2rem
+$fullhd-enabled: true !default
+$fullhd: 1344px + (2 * $gap) !default
+
+// Dictionary for looping
+$colors: ('black': $black, 'white': $white, 'red': $red, 'pink': $pink, 'green': $green, 'blue': $blue, 'yellow': $yellow, 'orange': $orange, 'cyan': $cyan, 'purple': $purple, 'teal': $teal, 'indigo': $indigo) !default
+$breakpoints: ('mobile': ('until': $tablet), 'tablet': ('from': $tablet), 'desktop': ('from': $desktop), 'widescreen': ('from': $widescreen), 'fullhd': ('from': $fullhd)) !default
+
+
+
+////////////////////////////////////////////////////
+// || Derived Variables
+////////////////////////////////////////////////////
+
+// Semantic Colors
+$primary: $blue !default
+$primary-invert: invertColor($primary) !default
+
+$secondary: $gray-400 !default
+$secondary-invert: invertColor($secondary) !default
+
+$danger: $red !default
+$danger-invert: invertColor($danger) !default
+
+$warning: $yellow !default
+$warning-invert: invertColor($warning) !default
+
+$success: $green !default
+$success-invert: invertColor($success) !default
+
+$info: $teal !default
+$info-invert: invertColor($info) !default
+
+// Typography
+$text: $black-2 !default
+$text-invert: invertColor($text) !default
+$text-strong: $black !default
+
+$size-large: $size-1 !default
+$size-medium: $size-2 !default
+$size-normal: $size-5 !default
+
+// Links
+$link: $blue !default
+$link-hovered: darken($blue, 10%) !default
+$link-focused: darken($blue, 10%) !default
+$link-active: $black !default
+$link-visited: $purple !default
+
+$link-border: opacity($blue, 0.5) !default
+$link-hovered-border: $link-hovered !default
+$link-focused-border: $link-focused !default
+$link-active-border: $link-active !default
+
+$semantic-colors: ('primary': $primary, 'primary-invert': $primary-invert, 'secondary': $secondary, 'secondary-invert': $secondary-invert, 'info': $info, 'info-invert': $info-invert, 'success': $success, 'success-invert': $success-invert, 'danger': $danger, 'danger-invert': $danger-invert, 'warning': $warning, 'warning-invert': $warning-invert, 'text': $text, 'text-invert': $text-invert) !default
+$text-colors: ('text': $text, 'text-strong': $text-strong, 'link': $blue, 'link-hovered': $link-hovered, 'link-focused': $link-focused, 'link-active': $link-active, 'link-visited': $link-visited, 'link-border': $link-border, 'link-hovered-border': $link-hovered-border, 'link-focused-border': $link-focused-border, 'link-active-border': $link-active-border) !default
+
+$semantic-list: 'primary' 'secondary' 'info' 'success' 'danger' 'warning'

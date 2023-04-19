@@ -1,0 +1,51 @@
+@charset "UTF-8"
+
+@import "variables"
+
+// Your code starts here
+
+// Responsiveness
+// @mixin mobile
+//   @media screen and (max-width: $tablet)
+//     @content
+
+@mixin hamburger($dimensions)
+  -moz-appearance: none
+  -webkit-appearance: none
+  appearance: none
+  background: none
+  border: none
+  cursor: pointer
+  position: relative
+  width: $dimensions
+  height: $dimensions
+  span
+    background-color: currentColor
+    height: 2px
+    left: calc(50% - 0.5rem)
+    position: absolute
+    width: 1rem
+    &:nth-child(1)
+      top: calc(50% - 6px)
+    &:nth-child(2)
+      top: calc(50% - 1px)
+    &:nth-child(3)
+      top: calc(50% + 4px)
+
+@mixin tablet
+  @media screen and (min-width: $tablet)
+    @content
+
+@mixin desktop
+  @media screen and (min-width: $desktop)
+    @content
+
+@mixin widescreen
+  @if $widescreen-enabled
+    @media screen and (min-width: $widescreen)
+      @content
+
+@mixin fullhd
+  @if $fullhd-enabled
+    @media screen and (min-width: $fullhd)
+      @content

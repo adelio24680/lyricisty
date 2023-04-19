@@ -1,0 +1,144 @@
+$lyricity-purple: #85009B
+
+select
+  -webkit-appearance: none
+  -moz-appearance: none
+  appearance: none
+  background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") white no-repeat 96% !important
+input
+  border-width: 1px
+  border-style: solid
+
+.lyricity-body
+  min-height: 100vh
+  font-family: "Prosto One"
+  display: grid
+  gap: 1rem
+  grid-template-columns: 1fr
+  grid-template-rows: 8rem min-content auto 2rem
+  grid-template-areas: "header" "lyricity-choose-artist" "lyricity-lyric" "footer"
+
+header
+  grid-area: header
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: $lyricity-purple
+  color: $white
+
+  // Bigger than phone
+  @include tablet
+    h1
+      font-size: 3rem
+
+.lyricity-choose-artist
+  margin-bottom: 1rem
+  grid-area: lyricity-choose-artist
+  h2
+    margin-bottom: 0.5rem
+    font-size: 1.5rem
+    text-align: center  
+  .container
+    width: 80%
+  select, input
+    border-radius: $radius-large
+    border-color: $gray-700
+    font-size: 1.2rem
+    padding: 1rem
+    display: block
+    margin-bottom: 1rem
+    width: 100%
+  .btn-container
+    display: flex
+    justify-content: space-around
+    .pill-btn
+      height: 3rem
+      background-color: $lyricity-purple
+      color: $white
+      font-size: 1.2rem
+      border: none
+      padding: 0.5rem 1rem
+      border-radius: 2rem
+      transition: .15s background-color
+    .pill-btn:hover
+      background-color: darken($lyricity-purple, 10%)
+
+  
+  
+  // Bigger than phone
+  @include tablet
+    h2
+      font-size: 2rem
+    .container
+      width: 100%
+    select,
+    input,
+    .btn-container
+      font-size: 1.5rem
+      margin: 0 auto
+      width: 50%
+    select, input
+      margin-bottom: 1rem
+    .btn-container
+      .pill-btn
+        height: 3.5rem
+        padding: 1rem 2rem
+        border-radius: 2rem
+
+.lyricity-lyric
+  grid-area: lyricity-lyric
+  .container
+    width: 100%
+    .lyricity-wrapper
+      display: none
+      margin: 0 auto
+      padding: 1rem
+      border: 16px solid $lyricity-purple
+    #lyricity-artist-text
+      font-size: 1.2rem
+      text-align: center
+      color: $gray-700
+    p
+      margin-bottom: 1.5rem
+      white-space: pre-wrap
+      text-align: center
+      font-size: 1.2rem
+      width: 100%
+    @include tablet
+      .lyricity-wrapper
+        width: 50%
+      p
+        font-size: 1.5rem
+
+footer
+  display: flex
+  align-items: center
+  justify-content: center
+  font-size: 1.2rem
+  grid-area: footer
+  text-align: center
+  background-color: $lyricity-purple
+  color: $white
+
+.lyricity-loader
+  height: 100vh
+  width: 100vw
+  left: 0
+  top: 0
+  z-index: 1
+  display: none
+  position: fixed
+  background-color: rgba(0, 0, 0, 0.5) 
+  .center
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+  .loader
+    animation: spinAround 2s infinite linear
+    border-radius: $radius-rounded
+    width: 8rem
+    height: 8rem
+    border: 16px solid $gray-700
+    border-top: 16px solid $lyricity-purple
+    

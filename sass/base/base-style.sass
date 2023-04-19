@@ -1,0 +1,88 @@
+@charset "UTF-8"
+
+@import "../utilities/all"
+
+// Content
+$content-max-width: 80ch !default
+$body-font-size: 1rem !default
+$border-width: 1px !default
+$body-line-height: 1.5 !default
+
+$hr-height: 2px !default
+$hr-margin: 1.5rem 0 !default
+$hr-color: $gray-300 !default
+
+// Your code starts here
+// About smoothing
+// See https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth
+// See https://www.zachleat.com/web/font-smooth/
+// About text size adjust: It can randomly increase your default size text in mobile because of small text
+// 100% is equivalent to none
+// See https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/
+html
+  font-size: 100%  // 100% probably default to 16px to most browser
+  overflow-x: hidden
+  overflow-y: scroll
+  text-rendering: optimizeLegibility
+  -moz-osx-font-smoothing: grayscale
+  -webkit-font-smoothing: antialiased
+  text-size-adjust: 100%  // Equivalent to none
+
+body
+  color: var(--text)
+  font-size: var(--body-font-size)
+  font-family: $family-sans-serif
+  font-weight: $weight-normal
+  line-height: var(--body-line-height)
+
+section,
+aside,
+header,
+main,
+footer
+  display: block
+
+pre,
+code
+  -moz-osx-font-smoothing: auto
+  -webkit-font-smoothing: auto
+  font-family: $family-monospace
+
+// Heading
+h1
+  font-size: $size-large
+  line-height: 1.2
+h2
+  font-size: $size-medium
+  line-height: 1.25
+h3
+  line-height: 1.3
+h4
+  line-height: 1.35  
+
+// Link
+a
+  color: $link
+  cursor: pointer
+  text-decoration: none
+  strong
+    color: currentColor
+  &:hover
+    color: $link-hovered
+    text-decoration: underline
+
+// hr
+hr
+  background-color: $gray-300
+  border: none
+  display: block
+  height: $hr-height
+  margin: $hr-margin
+
+// Table
+table
+  th,
+  td
+    vertical-align: top
+  th
+    color: $text-strong

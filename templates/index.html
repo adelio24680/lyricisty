@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prosto+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/index.css">
+    <title>Lyricisty</title>
+</head>
+<body>
+    <div class="lyricity-loader">
+        <div class="center">
+            <div class="loader"></div>
+        </div>
+    </div>
+    <div class="lyricity-body">
+        <header>
+            <h1>Lyricisty</h1>
+        </header>
+        <section class="lyricity-choose-artist">
+            <div class="container">
+                <h2>Membuat Lirik Baru<br>Berdasarkan Artis/Band</h2>
+                <select id="select-artist">
+                    <option value="" disabled selected>~~ Pilih Artis/Band</option>
+                    {% for artist in artists %}
+                    <option value="{{ artist }}">{{ artist }}</option>
+                    {% endfor %}
+                </select>
+                <input type="number" placeholder="Maximum Line Number" id="js-line-number">
+    
+                <div class="btn-container">
+                    <button id="artist-generate" class="pill-btn">Search</button>
+                    <button id="random-artist" class="pill-btn">Random</button>
+                </div> 
+            </div>
+            
+        </section>
+        <section class="lyricity-lyric">
+            <div class="container">
+                <div class="lyricity-wrapper">
+                    <p id="lyricity-lyric-text"></p>
+                    <p id="lyricity-artist-text"></p>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <p>Created by Work Group - 2022</p>
+        </footer>
+    </div>
+    <script src="static/script.js"></script>
+</body>
+</html>
